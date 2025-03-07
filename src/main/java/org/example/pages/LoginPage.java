@@ -15,6 +15,7 @@ public class LoginPage {
     private By usernameField = By.name("username");
     private By passwordField = By.name("password");
     private By loginButton = By.cssSelector("button[type=submit]");
+    private By logoutButton = By.id("logout");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -43,6 +44,12 @@ public class LoginPage {
         enterUsername(username);
         enterPassword(password);
         clickLoginButton();
+    }
+
+    public void logout() {
+        By logoutButton = By.id("logout");
+        WebElement logoutButtonElement = wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
+        logoutButtonElement.click();
     }
 
 }

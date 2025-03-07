@@ -19,7 +19,7 @@ public class BaseTest {
         driver = WebDriverSetup.getDriver();
         driver.get("http://opensource-demo.orangehrmlive.com/");
 
-        if(!this.getClass().getSimpleName().equals("LoginTest")) {
+        if(!this.getClass().getSimpleName().equals("LoginTestExcel")) {
             login("Admin", "admin123");
         }
 
